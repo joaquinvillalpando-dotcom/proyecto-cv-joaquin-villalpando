@@ -1,0 +1,98 @@
+:root {
+  /* PALETA BASE (colores crudos de la paleta elegida) */
+  --color_esmeralda:       #23ce6b;
+  --color_esmeralda_texto: #178a4c;
+  --color_amatista:        #a846a0;
+  --color_amatista_texto:  #7a2f78;
+  --color_negro_azabache:  #272d2d;
+  --color_blanco_fantasma: #f6f8ff;
+  --color_carbon:          #50514f;
+
+  /* TEMA CLARO (modo por defecto del sitio) */
+  --bg_body:        var(--color_blanco_fantasma);
+  --bg_superficie:  #ffffff;
+  --bg_tarjeta:     #ffffff;
+  --bg_encabezado:  rgba(246, 248, 255, 0.85);
+  --bg_input:       #ffffff;
+
+  --texto_primario:   var(--color_negro_azabache);
+  --texto_secundario: var(--color_carbon);
+  --texto_tenue:      #63645f; 
+  --texto_invertido:  var(--color_blanco_fantasma);
+
+  --color_enlace:      #13753f;
+  --color_acento:      var(--color_esmeralda);
+  --color_acento_dos:  var(--color_amatista_texto);
+
+  --borde_color:       rgba(39, 45, 45, 0.14);
+  --borde_color_fuerte: rgba(39, 45, 45, 0.28);
+  --borde_foco:        var(--color_esmeralda_texto);
+
+  --sombra_sm: 0 2px 6px rgba(39, 45, 45, 0.08);
+  --sombra_md: 0 8px 20px rgba(39, 45, 45, 0.10);
+  --sombra_lg: 0 18px 40px rgba(39, 45, 45, 0.14);
+  --sombra_acento: 0 0 0 4px rgba(35, 206, 107, 0.18);
+
+  --vidrio_fondo: rgba(255, 255, 255, 0.72);
+  --vidrio_desenfoque: blur(14px);
+
+  /* TIPOGRAFÍA */
+  --fuente_titulo: 'Sora', 'Segoe UI', system-ui, sans-serif;
+  --fuente_cuerpo: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --fuente_codigo: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ESPACIADO */
+  --espacio_2xs: 0.25rem;
+  --espacio_xs:  0.5rem;
+  --espacio_sm:  0.75rem;
+  --espacio_md:  1.25rem;
+  --espacio_lg:  2rem;
+  --espacio_xl:  3rem;
+  --espacio_2xl: 4.5rem;
+
+  --ancho_maximo: 1080px;
+
+  /* RADIOS DE BORDE */
+  --radio_sm:   8px;
+  --radio_md:   14px;
+  --radio_lg:   22px;
+  --radio_full: 9999px;
+
+  /* TRANSICIONES */
+  --transicion_rapida:  0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --transicion_normal:  0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  --transicion_rebote:  0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --indice_nav: 500;
+  --indice_menu_movil: 600;
+  --indice_notificacion: 900;
+}
+
+/* TEMA OSCURO: se activa agregando data-theme="dark" al <html> vía JS */
+[data-theme="dark"] {
+  --bg_body:       var(--color_negro_azabache);
+  --bg_superficie: #313837;
+  --bg_tarjeta:    #313837;
+  --bg_encabezado: rgba(39, 45, 45, 0.85);
+  --bg_input:      #3a4241;
+
+  --texto_primario:   var(--color_blanco_fantasma);
+  --texto_secundario: #c3c7c5;
+  --texto_tenue:      #a6aaa7;
+  --texto_invertido:  var(--color_negro_azabache);
+
+  --color_enlace:     var(--color_esmeralda);
+  --color_acento:     var(--color_esmeralda);
+  --color_acento_dos: var(--color_amatista);
+
+  --borde_color:        rgba(246, 248, 255, 0.14);
+  --borde_color_fuerte: rgba(246, 248, 255, 0.28);
+  --borde_foco:         var(--color_esmeralda);
+
+  --sombra_sm: 0 2px 6px rgba(0, 0, 0, 0.35);
+  --sombra_md: 0 8px 20px rgba(0, 0, 0, 0.4);
+  --sombra_lg: 0 18px 40px rgba(0, 0, 0, 0.5);
+  --sombra_acento: 0 0 0 4px rgba(35, 206, 107, 0.25);
+
+  --vidrio_fondo: rgba(39, 45, 45, 0.65);
+}

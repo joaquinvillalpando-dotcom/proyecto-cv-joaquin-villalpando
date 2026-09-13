@@ -1,0 +1,67 @@
+/* ENTRADA DEL ENCABEZADO AL CARGAR LA PÁGINA */
+@keyframes aparecer_desde_arriba {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+header[role="banner"] {
+  animation: aparecer_desde_arriba 0.6s ease-out both;
+}
+
+/* ENTRADA DEL DIÁLOGO NATIVO */
+@keyframes aparecer_dialogo {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* REVELADO POR SCROLL (clases controladas por js/main.js) */
+.revelar {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.revelar.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MENÚ MÓVIL: apertura/cierre */
+@keyframes desplegar_menu {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.menu_principal.menu_abierto {
+  animation: desplegar_menu 0.25s ease-out;
+}
+
+/* Icono hamburguesa: transformación a "X" cuando el menú está abierto */
+.boton_menu_movil[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.boton_menu_movil[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.boton_menu_movil[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* PULSO SUTIL PARA EL MENSAJE DE ÉXITO DEL FORMULARIO */
+@keyframes pulso_suave {
+  0%   { box-shadow: 0 0 0 0 rgba(35, 206, 107, 0.35); }
+  70%  { box-shadow: 0 0 0 10px rgba(35, 206, 107, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(35, 206, 107, 0); }
+}
+
+.mensaje_estado.exito { animation: pulso_suave 1.2s ease-out; }
+
+/* ACCESIBILIDAD: respeta la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
