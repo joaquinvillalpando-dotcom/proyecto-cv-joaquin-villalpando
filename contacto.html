@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario e información de contacto de Joaquin Villalpando.">
+    <meta name="author" content="Joaquin Francisco Villalpando Apaza">
+    <title>Contacto — Joaquin Villalpando</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <a href="#contenido_principal">Saltar al contenido principal</a>
+    <header role="banner" id="tope">
+        <div class="contenedor">
+            <picture class="foto_perfil_marco">
+                <source media="(min-width: 100px)" srcset="assets/images/foto-perfil.png">
+                <img src="assets/images/foto-perfil.png" alt="Fotografía profesional de primer plano de Joaquin Francisco Villalpando Apaza" width="150" loading="lazy" class="foto_perfil">
+            </picture>
+            <h1>Joaquin Francisco Villalpando Apaza</h1>
+            <p class="rol_profesional">Estudiante de Ingeniería de Sistemas</p>
+            <p class="cita_destacada"><em>Cada uno es artífice de su propia ventura</em></p>
+            <address class="direccion_contacto">
+                <p>La Paz, Bolivia</p>
+                <p>Correo: <a href="mailto:joaquin.villalpando@ucb.edu.bo">joaquin.villalpando@ucb.edu.bo</a></p>
+                <p>Teléfono: <a href="tel:+59162447093">+591 62447093</a></p>
+            </address>
+        </div>
+    </header>
+
+    <nav aria-label="Navegación principal del sitio">
+        <div class="contenedor barra_navegacion">
+            <button type="button" id="boton_menu_movil" class="boton_menu_movil" aria-expanded="false" aria-controls="menu_principal" aria-label="Abrir menú de navegación">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="menu_principal" class="menu_principal">
+                <li><a href="index.html#perfil" class="enlace_nav">Perfil Profesional</a></li>
+                <li><a href="formacion.html#estudios" class="enlace_nav">Formación Académica</a></li>
+                <li><a href="experiencia.html#experiencia" class="enlace_nav">Experiencia Laboral</a></li>
+                <li><a href="habilidades.html#habilidades" class="enlace_nav">Habilidades</a></li>
+                <li><a href="certificaciones.html#certificaciones" class="enlace_nav">Certificaciones y Logros</a></li>
+                <li><a href="idiomas.html#idiomas" class="enlace_nav">Idiomas</a></li>
+                <li><a href="proyectos.html#proyectos" class="enlace_nav">Proyectos Destacados</a></li>
+                <li><a href="multimedia.html#multimedia" class="enlace_nav">Portafolio Multimedia</a></li>
+                <li><a href="contacto.html#contacto" class="enlace_nav activo" aria-current="page">Contacto</a></li>
+            </ul>
+            <button type="button" id="boton_tema" class="boton_tema" aria-label="Cambiar tema de color">
+                <span id="icono_tema" aria-hidden="true">&#9789;</span>
+                <span id="texto_tema">Modo oscuro</span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="contenido_principal" role="main">
+        <div class="contenedor">
+            <section id="contacto" aria-labelledby="titulo_contacto">
+                <h2 id="titulo_contacto">Contacto</h2>
+                <p>Complete el siguiente formulario. Los campos marcados con (*) son obligatorios.</p>
+                <div id="mensaje_estado_formulario" class="mensaje_estado" role="status" aria-live="polite" hidden></div>
+                <form id="formulario_contacto" class="formulario_contacto" action="#" method="post" novalidate>
+                    <fieldset>
+                        <legend>Datos Personales de Contacto</legend>
+                        <p>
+                            <label for="txt_nombre">Nombre Completo (*):</label>
+                            <input type="text" id="txt_nombre" name="nombre" placeholder="Nombre completo" required minlength="4" maxlength="80" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Utilice únicamente letras y espacios en el nombre">
+                            <small class="texto_error" id="error_txt_nombre" role="alert"></small>
+                        </p>
+                        <p>
+                            <label for="txt_correo">Correo Electrónico (*):</label>
+                            <input type="email" id="txt_correo" name="correo" placeholder="correo@ejemplo.com" required>
+                            <small class="texto_error" id="error_txt_correo" role="alert"></small>
+                        </p>
+                        <p>
+                            <label for="txt_telefono">Teléfono (*):</label>
+                            <input type="tel" id="txt_telefono" name="telefono" placeholder="Ej. 70000000" required pattern="(\+591|591)?[67][0-9]{7}" title="Número celular boliviano de 8 dígitos, ej. 70000000">
+                            <small class="texto_error" id="error_txt_telefono" role="alert"></small>
+                        </p>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Motivo de la Solicitud</legend>
+                        <p>
+                            <label for="txt_motivo">Motivo de contacto (*):</label>
+                            <input type="text" id="txt_motivo" name="motivo" list="opciones_motivo" placeholder="Seleccione o escriba" required>
+                            <datalist id="opciones_motivo">
+                                <option value="Colaboración en proyectos"></option>
+                                <option value="Oportunidades de pasantía"></option>
+                                <option value="Consultas técnicas de código"></option>
+                                <option value="Otros temas profesionales"></option>
+                            </datalist>
+                            <small class="texto_error" id="error_txt_motivo" role="alert"></small>
+                        </p>
+                        <p>
+                            <label for="txt_mensaje">Mensaje (*):</label>
+                            <textarea id="txt_mensaje" name="mensaje" rows="6" placeholder="Escriba su mensaje en detalle aquí..." required minlength="10" maxlength="500"></textarea>
+                            <small id="contador_caracteres" class="contador_caracteres">0 / 500</small>
+                            <small class="texto_error" id="error_txt_mensaje" role="alert"></small>
+                        </p>
+                    </fieldset>
+                    <p>
+                        <label for="chk_aceptacion">
+                            <input type="checkbox" id="chk_aceptacion" name="aceptacion" required>
+                            Consiento el procesamiento formal de mis datos de contacto (*)
+                        </label>
+                        <small class="texto_error" id="error_chk_aceptacion" role="alert"></small>
+                    </p>
+                    <p>
+                        <button type="submit">Enviar Mensaje</button>
+                        <button type="reset">Limpiar Formulario</button>
+                    </p>
+                </form>
+            </section>
+        </div>
+    </main>
+    <aside class="barra_lateral" aria-label="Información adicional">
+        <div class="contenedor">
+            <section aria-labelledby="titulo_disponibilidad">
+                <h3 id="titulo_disponibilidad">Disponibilidad Actual</h3>
+                <p>Estado de disponibilidad del estudiante:</p>
+                <p><meter min="0" max="100" low="30" high="70" optimum="90" value="80">Disponible</meter></p>
+            </section>
+            <section aria-labelledby="titulo_descargas">
+                <h3 id="titulo_descargas">Descarga de Recursos</h3>
+                <ul>
+                    <li><a href="assets/documents/hoja-de-vida-joaquin-villalpando.pdf" download="CV_Estudiante_Sistemas.pdf">Descargar CV en formato PDF</a></li>
+                </ul>
+            </section>
+            <section aria-labelledby="titulo_aviso" id="tarjeta_aviso">
+                <h3 id="titulo_aviso">Aviso Importante</h3>
+                <dialog id="dialogo_aviso">
+                    <p><strong>Aviso:</strong> la información de este sitio se actualiza de forma periódica.</p>
+                    <form method="dialog">
+                        <button type="submit" id="boton_cerrar_aviso">Cerrar aviso</button>
+                    </form>
+                </dialog>
+            </section>
+        </div>
+    </aside>
+
+    <footer role="contentinfo">
+        <div class="contenedor">
+            <p>Estudiante de Ingeniería de Sistemas — Asignatura: Tecnologías Web I</p>
+            <p>Última actualización: <time datetime="2026-09-11">11 de septiembre de 2026</time></p>
+            <p><a href="#tope">Volver arriba</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
